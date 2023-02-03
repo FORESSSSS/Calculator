@@ -38,6 +38,7 @@ public class Calculator {
             case 'C':
                 operand1 = 0.0;
                 System.out.println("Результат обнулён!\n");
+                inputOperand1();
                 inputOperation();
                 break;
             case 's':
@@ -51,7 +52,7 @@ public class Calculator {
         }
     }
 
-    double checkOperation() {
+    public double checkOperation() {
         switch (operation) {
             case '+':
                 return add();
@@ -82,5 +83,13 @@ public class Calculator {
             operand2 = inputOperand2();
         }
         return operand1 / operand2;
+    }
+
+    void printResult() {
+        if (operand1 % 1 == 0) {
+            System.out.println("Результат: " + operand1 + "\b\b\n");
+        } else {
+            System.out.println("Результат: " + operand1 + "\n");
+        }
     }
 }

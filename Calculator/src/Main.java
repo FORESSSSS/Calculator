@@ -7,13 +7,8 @@ public class Main {
         while (true) {
             calculator.inputOperation();
             calculator.inputOperand2();
-            calculator.result = calculator.checkOperation();
-            calculator.operand1 = calculator.result;
-            if (calculator.result % 1 == 0) {
-                System.out.println("Результат: " + calculator.result + "\b\b\n");
-            } else {
-                System.out.println("Результат: " + calculator.result + "\n");
-            }
+            calculator.operand1 = calculator.checkOperation();
+            calculator.printResult();
         }
     }
 
