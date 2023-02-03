@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner scanner = new Scanner(System.in);
-    double operand1, operand2, result;
+    double operand1, operand2;
     char operation;
 
     double inputOperand1() {
@@ -35,13 +35,13 @@ public class Calculator {
         switch (operation) {
             case '+', '-', '*', '/':
                 break;
-            case 'C':
+            case 'C', 'С', 'c', 'с' :
                 operand1 = 0.0;
                 System.out.println("Результат обнулён!\n");
                 inputOperand1();
                 inputOperation();
                 break;
-            case 's':
+            case 's', 'S' :
                 System.out.println("Программа завершена.");
                 System.exit(0);
             default:
@@ -86,10 +86,6 @@ public class Calculator {
     }
 
     void printResult() {
-        if (operand1 % 1 == 0) {
-            System.out.println("Результат: " + operand1 + "\b\b\n");
-        } else {
-            System.out.println("Результат: " + operand1 + "\n");
-        }
+        System.out.println(operand1 % 1 == 0 ? "Результат: " + operand1 + "\b\b\n" : "Результат: " + operand1 + "\n");
     }
 }

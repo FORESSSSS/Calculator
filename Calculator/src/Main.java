@@ -11,7 +11,6 @@ public class Main {
             calculator.printResult();
         }
     }
-
     public static void printMenu() {
         System.out.println("Здравствуйте!\n");
         System.out.println("Для вычисления используйте символы: \"+\", \"-\", \"*\", \"/\"");
